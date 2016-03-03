@@ -115,8 +115,6 @@
     [ctrlBg addSubview:btnPlistSaveData];
     
     
-    
-    
     UIButton *btnPlistReadData = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(btnPlistSaveData.frame) + 10, CGRectGetMaxY(imgPlistUserView.frame)+10, 100, 25)];
     [btnPlistReadData addTarget:self action:@selector(readData) forControlEvents:UIControlEventTouchUpInside];
     btnPlistReadData.backgroundColor = [UIColor darkGrayColor];
@@ -126,15 +124,11 @@
     [ctrlBg addSubview:btnPlistReadData];
     
     
-    
-    
     UILabel *lblArhiveTips = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(btnPlistSaveData.frame)+10, 320, 20)];
     lblArhiveTips.text = @"04.归档和恢复归档，自定义对象需要实现NSCoding协议";
     lblArhiveTips.font = [UIFont systemFontOfSize:12];
     lblArhiveTips.numberOfLines = 0;
     [ctrlBg addSubview:lblArhiveTips];
-    
-    
     
     
     UIButton *btnArchiveData = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(lblArhiveTips.frame)+10, 100, 25)];
