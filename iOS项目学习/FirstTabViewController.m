@@ -12,7 +12,7 @@
 #import "Author.h"
 
 @interface FirstTabViewController () {
-    UIControl *ctrlBg;
+    UIScrollView *scrollViewBg;
     UILabel *lblCatalog;
     
     UILabel *lblTips;
@@ -34,10 +34,10 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"下一个页面" style:UIBarButtonItemStylePlain target:self action:@selector(nextPage)];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    ctrlBg = [[UIControl alloc] initWithFrame:[self.view bounds]];
-//    ctrlBg.backgroundColor = [UIColor grayColor];
-    [ctrlBg addTarget:self action:@selector(hideKeybord) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:ctrlBg];
+    scrollViewBg = [[UIScrollView alloc] initWithFrame:[self.view bounds]];
+    scrollViewBg.backgroundColor = [UIColor grayColor];
+//    [scrollViewBg addTarget:self action:@selector(hideKeybord) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:scrollViewBg];
     
     [self buildSandBoxUI];
     [self buildPlistUI];
@@ -45,10 +45,10 @@
 }
 
 -(void) buildSandBoxUI {//沙盒目录
-    lblCatalog = [[UILabel alloc] initWithFrame:CGRectMake(0, 74, 150, 12)];
+    lblCatalog = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 150, 12)];
     lblCatalog.text = @"02.获取沙盒目录";
     lblCatalog.font = [UIFont systemFontOfSize:12];
-    [ctrlBg addSubview:lblCatalog];
+    [scrollViewBg addSubview:lblCatalog];
     
     // Override point for customization after application launch.
     NSString *strHomeDir = [NSString stringWithFormat:@"应用根目录：%@",NSHomeDirectory()];
@@ -63,11 +63,11 @@
 }
 
 -(void) buildPlistUI {//Plist文件写入
-    lblTips = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, 320, 50)];
+    lblTips = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(lblCatalog.frame) + 20, 320, 50)];
     lblTips.text = @"03.Plist概念及演练，可保存：\nNSArray，NSDictionary，Boolean，NSDate，NSNumber，NSString";
     lblTips.font = [UIFont systemFontOfSize:12];
     lblTips.numberOfLines = 0;
-    [ctrlBg addSubview:lblTips];
+    [scrollViewBg addSubview:lblTips];
     
     
     txtPlistUserName = [[UITextField alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(lblTips.frame)+10, 200, 25)];
@@ -75,7 +75,7 @@
     txtPlistUserName.layer.borderWidth = 1;
     txtPlistUserName.placeholder = @"姓名";
     txtPlistUserName.layer.cornerRadius = 3;
-    [ctrlBg  addSubview:txtPlistUserName];
+    [scrollViewBg  addSubview:txtPlistUserName];
     
     
     txtPlistAage = [[UITextField alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(txtPlistUserName.frame)+10, 200, 25)];
@@ -83,7 +83,7 @@
     txtPlistAage.layer.borderWidth = 1;
     txtPlistAage.placeholder = @"年龄";
     txtPlistAage.layer.cornerRadius = 3;
-    [ctrlBg addSubview:txtPlistAage];
+    [scrollViewBg addSubview:txtPlistAage];
     
     
     txtPlistPhone = [[UITextField alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(txtPlistAage.frame)+10, 200, 25)];
@@ -91,7 +91,7 @@
     txtPlistPhone.layer.borderWidth = 1;
     txtPlistPhone.placeholder = @"电话";
     txtPlistPhone.layer.cornerRadius = 3;
-    [ctrlBg addSubview:txtPlistPhone];
+    [scrollViewBg addSubview:txtPlistPhone];
     
     
     imgPlistUserView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(txtPlistUserName.frame)+5, CGRectGetMinY(txtPlistUserName.frame), 100, 90)];
@@ -103,7 +103,7 @@
 //    imgUserView.image = [UIImage imageNamed:@"plistPic"];
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     [imgPlistUserView addGestureRecognizer:singleTap];
-    [ctrlBg addSubview:imgPlistUserView];
+    [scrollViewBg addSubview:imgPlistUserView];
     
     
     UIButton *btnPlistSaveData = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(imgPlistUserView.frame)+10, 100, 25)];
@@ -112,7 +112,7 @@
     btnPlistSaveData.titleLabel.font = [UIFont systemFontOfSize:12];
     btnPlistSaveData.layer.cornerRadius = 3;
     [btnPlistSaveData setTitle:@"保存Plist数据" forState:UIControlStateNormal];
-    [ctrlBg addSubview:btnPlistSaveData];
+    [scrollViewBg addSubview:btnPlistSaveData];
     
     
     UIButton *btnPlistReadData = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(btnPlistSaveData.frame) + 10, CGRectGetMaxY(imgPlistUserView.frame)+10, 100, 25)];
@@ -121,14 +121,14 @@
     btnPlistReadData.layer.cornerRadius = 3;
     btnPlistReadData.titleLabel.font = [UIFont systemFontOfSize:12];
     [btnPlistReadData setTitle:@"读取Plist数据" forState:UIControlStateNormal];
-    [ctrlBg addSubview:btnPlistReadData];
+    [scrollViewBg addSubview:btnPlistReadData];
     
     
     UILabel *lblArhiveTips = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(btnPlistSaveData.frame)+10, 320, 20)];
     lblArhiveTips.text = @"04.归档和恢复归档，自定义对象需要实现NSCoding协议";
     lblArhiveTips.font = [UIFont systemFontOfSize:12];
     lblArhiveTips.numberOfLines = 0;
-    [ctrlBg addSubview:lblArhiveTips];
+    [scrollViewBg addSubview:lblArhiveTips];
     
     
     UIButton *btnArchiveData = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(lblArhiveTips.frame)+10, 100, 25)];
@@ -137,9 +137,7 @@
     btnArchiveData.titleLabel.font = [UIFont systemFontOfSize:12];
     btnArchiveData.layer.cornerRadius = 3;
     [btnArchiveData setTitle:@"归档【对象】" forState:UIControlStateNormal];
-    [ctrlBg addSubview:btnArchiveData];
-    
-    
+    [scrollViewBg addSubview:btnArchiveData];
     
     
     UIButton *btnUnArchiveData = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(btnArchiveData.frame) + 10, CGRectGetMaxY(lblArhiveTips.frame)+10, 100, 25)];
@@ -148,17 +146,14 @@
     btnUnArchiveData.layer.cornerRadius = 3;
     btnUnArchiveData.titleLabel.font = [UIFont systemFontOfSize:12];
     [btnUnArchiveData setTitle:@"解档【对象】" forState:UIControlStateNormal];
-    [ctrlBg addSubview:btnUnArchiveData];
-    
+    [scrollViewBg addSubview:btnUnArchiveData];
     
     
     UILabel *lblMultiArhiveTips = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(btnUnArchiveData.frame)+10, 320, 20)];
     lblMultiArhiveTips.text = @"06.NSData归档多个对象【重点】";
     lblMultiArhiveTips.font = [UIFont systemFontOfSize:12];
     lblMultiArhiveTips.numberOfLines = 0;
-    [ctrlBg addSubview:lblMultiArhiveTips];
-    
-    
+    [scrollViewBg addSubview:lblMultiArhiveTips];
     
     
     UIButton *btnMultiArchiveData = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(lblMultiArhiveTips.frame)+10, 130, 25)];
@@ -167,7 +162,7 @@
     btnMultiArchiveData.titleLabel.font = [UIFont systemFontOfSize:12];
     btnMultiArchiveData.layer.cornerRadius = 3;
     [btnMultiArchiveData setTitle:@"Data归档多个【对象】" forState:UIControlStateNormal];
-    [ctrlBg addSubview:btnMultiArchiveData];
+    [scrollViewBg addSubview:btnMultiArchiveData];
     
     
     UIButton *btnMultiUnArchiveData = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(btnMultiArchiveData.frame) + 10, CGRectGetMaxY(lblMultiArhiveTips.frame)+10, 130, 25)];
@@ -176,16 +171,14 @@
     btnMultiUnArchiveData.layer.cornerRadius = 3;
     btnMultiUnArchiveData.titleLabel.font = [UIFont systemFontOfSize:12];
     [btnMultiUnArchiveData setTitle:@"Data解档多个【对象】" forState:UIControlStateNormal];
-    [ctrlBg addSubview:btnMultiUnArchiveData];
-    
-    
+    [scrollViewBg addSubview:btnMultiUnArchiveData];
     
     
     UILabel *lblArrayArhiveTips = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(btnMultiUnArchiveData.frame)+10, 320, 20)];
     lblArrayArhiveTips.text = @"07.NSArray归档多个对象";
     lblArrayArhiveTips.font = [UIFont systemFontOfSize:12];
     lblArrayArhiveTips.numberOfLines = 0;
-    [ctrlBg addSubview:lblArrayArhiveTips];
+    [scrollViewBg addSubview:lblArrayArhiveTips];
     
     
     UIButton *btnArrayArchiveData = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(lblArrayArhiveTips.frame)+10, 130, 25)];
@@ -194,7 +187,7 @@
     btnArrayArchiveData.titleLabel.font = [UIFont systemFontOfSize:12];
     btnArrayArchiveData.layer.cornerRadius = 3;
     [btnArrayArchiveData setTitle:@"Array归档多个【对象】" forState:UIControlStateNormal];
-    [ctrlBg addSubview:btnArrayArchiveData];
+    [scrollViewBg addSubview:btnArrayArchiveData];
     
     
     UIButton *btnArrayUnArchiveData = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(btnArrayArchiveData.frame) + 10, CGRectGetMaxY(lblArrayArhiveTips.frame)+10, 130, 25)];
@@ -203,12 +196,39 @@
     btnArrayUnArchiveData.layer.cornerRadius = 3;
     btnArrayUnArchiveData.titleLabel.font = [UIFont systemFontOfSize:12];
     [btnArrayUnArchiveData setTitle:@"Array解档多个【对象】" forState:UIControlStateNormal];
-    [ctrlBg addSubview:btnArrayUnArchiveData];
+    [scrollViewBg addSubview:btnArrayUnArchiveData];
     
+    
+    UILabel *lblUsersDefaultTips = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(btnArrayUnArchiveData.frame)+10, 320, 20)];
+    lblUsersDefaultTips.text = @"08.用户偏好设置【键值对，重要的信息，对时时同步要求性比较高的】";
+    lblUsersDefaultTips.font = [UIFont systemFontOfSize:12];
+    lblUsersDefaultTips.numberOfLines = 0;
+    [scrollViewBg addSubview:lblUsersDefaultTips];
+    
+    
+    UIButton *btnUserDefaultsData = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(lblUsersDefaultTips.frame)+10, 130, 25)];
+    [btnUserDefaultsData addTarget:self action:@selector(saveUerDefaults) forControlEvents:UIControlEventTouchUpInside];
+    btnUserDefaultsData.backgroundColor = [UIColor redColor];
+    btnUserDefaultsData.layer.cornerRadius = 3;
+    btnUserDefaultsData.titleLabel.font = [UIFont systemFontOfSize:12];
+    [btnUserDefaultsData setTitle:@"保存用户偏好设置" forState:UIControlStateNormal];
+    [scrollViewBg addSubview:btnUserDefaultsData];
+    
+    
+    UIButton *btnReadUserDefaltsData = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(btnUserDefaultsData.frame) + 10, CGRectGetMaxY(lblUsersDefaultTips.frame)+10, 130, 25)];
+    [btnReadUserDefaltsData addTarget:self action:@selector(readUerDefaults) forControlEvents:UIControlEventTouchUpInside];
+    btnReadUserDefaltsData.backgroundColor = [UIColor darkGrayColor];
+    btnReadUserDefaltsData.layer.cornerRadius = 3;
+    btnReadUserDefaltsData.titleLabel.font = [UIFont systemFontOfSize:12];
+    [btnReadUserDefaltsData setTitle:@"读取用户偏好设置" forState:UIControlStateNormal];
+    [scrollViewBg addSubview:btnReadUserDefaltsData];
+    
+    
+    [scrollViewBg setContentSize:CGSizeMake(self.view.bounds.size.width, 2500)];
 }
 
 -(void) hideKeybord {
-    [ctrlBg endEditing:YES];
+    [scrollViewBg endEditing:YES];
 }
 
 -(void) saveData {
@@ -392,9 +412,28 @@
     NSArray *arrayData = [NSKeyedUnarchiver unarchiveObjectWithFile:strFilePath];////////////?????////////////////////////////////////////////////
     Author *person1 = arrayData[0];
     Author *person2 = arrayData[1];
-    NSLog(@"%@",person2.name);
+    NSLog(@"%@",person1.name);
     NSLog(@"%@",person2.bookName);
 }
+
+
+//用户偏好设置
+-(void) saveUerDefaults {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:@"sdfsdf" forKey:@"name"];
+    [userDefaults setObject:@"0" forKey:@"isPurchase"];
+    [userDefaults setObject:@"20" forKey:@"age"];
+    if ([userDefaults synchronize]) { //立即同步
+        NSLog(@"系统偏好设置同步成功！");
+    }
+}
+
+-(void) readUerDefaults {
+    NSString *strName = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
+    NSLog(@"%@",strName);
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
