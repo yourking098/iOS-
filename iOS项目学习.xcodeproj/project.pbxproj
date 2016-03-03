@@ -10,11 +10,18 @@
 		CB0790021C6F2B49004A6CF0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0790011C6F2B49004A6CF0 /* main.m */; };
 		CB0790051C6F2B49004A6CF0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0790041C6F2B49004A6CF0 /* AppDelegate.m */; };
 		CB0790081C6F2B49004A6CF0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0790071C6F2B49004A6CF0 /* ViewController.m */; };
-		CB07900B1C6F2B49004A6CF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0790091C6F2B49004A6CF0 /* Main.storyboard */; };
 		CB07900D1C6F2B49004A6CF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB07900C1C6F2B49004A6CF0 /* Assets.xcassets */; };
 		CB0790101C6F2B49004A6CF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB07900E1C6F2B49004A6CF0 /* LaunchScreen.storyboard */; };
 		CB07901B1C6F2B49004A6CF0 /* iOS____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07901A1C6F2B49004A6CF0 /* iOS____Tests.m */; };
 		CB0790261C6F2B49004A6CF0 /* iOS____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0790251C6F2B49004A6CF0 /* iOS____UITests.m */; };
+		CB0790351C6F2C08004A6CF0 /* FirstTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0790341C6F2C08004A6CF0 /* FirstTabViewController.m */; };
+		CB0790381C6F2C21004A6CF0 /* SecondTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0790371C6F2C21004A6CF0 /* SecondTabViewController.m */; };
+		CB07903B1C6F2C2D004A6CF0 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07903A1C6F2C2D004A6CF0 /* ThirdViewController.m */; };
+		CB0790411C6F2C88004A6CF0 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0790401C6F2C88004A6CF0 /* FourthViewController.m */; };
+		CB0790441C6F63B3004A6CF0 /* FirstTabFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0790431C6F63B3004A6CF0 /* FirstTabFirstViewController.m */; };
+		CB0790471C6F6506004A6CF0 /* FirstTabSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0790461C6F6506004A6CF0 /* FirstTabSecondViewController.m */; };
+		CB586C631C85E7680072737B /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = CB586C621C85E7680072737B /* Author.m */; };
+		CB822F061C79AEB4007BA443 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CB822F051C79AEB4007BA443 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +48,6 @@
 		CB0790041C6F2B49004A6CF0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CB0790061C6F2B49004A6CF0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CB0790071C6F2B49004A6CF0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CB07900A1C6F2B49004A6CF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB07900C1C6F2B49004A6CF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB07900F1C6F2B49004A6CF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB0790111C6F2B49004A6CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +57,22 @@
 		CB0790211C6F2B49004A6CF0 /* iOS项目学习UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS项目学习UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0790251C6F2B49004A6CF0 /* iOS____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "iOS____UITests.m"; sourceTree = "<group>"; };
 		CB0790271C6F2B49004A6CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB0790331C6F2C08004A6CF0 /* FirstTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTabViewController.h; sourceTree = "<group>"; };
+		CB0790341C6F2C08004A6CF0 /* FirstTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTabViewController.m; sourceTree = "<group>"; };
+		CB0790361C6F2C21004A6CF0 /* SecondTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTabViewController.h; sourceTree = "<group>"; };
+		CB0790371C6F2C21004A6CF0 /* SecondTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTabViewController.m; sourceTree = "<group>"; };
+		CB0790391C6F2C2D004A6CF0 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		CB07903A1C6F2C2D004A6CF0 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		CB07903F1C6F2C88004A6CF0 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		CB0790401C6F2C88004A6CF0 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		CB0790421C6F63B3004A6CF0 /* FirstTabFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTabFirstViewController.h; sourceTree = "<group>"; };
+		CB0790431C6F63B3004A6CF0 /* FirstTabFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTabFirstViewController.m; sourceTree = "<group>"; };
+		CB0790451C6F6506004A6CF0 /* FirstTabSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTabSecondViewController.h; sourceTree = "<group>"; };
+		CB0790461C6F6506004A6CF0 /* FirstTabSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTabSecondViewController.m; sourceTree = "<group>"; };
+		CB586C611C85E7680072737B /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
+		CB586C621C85E7680072737B /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
+		CB822F041C79AEB4007BA443 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
+		CB822F051C79AEB4007BA443 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,15 +123,27 @@
 		CB078FFF1C6F2B49004A6CF0 /* iOS项目学习 */ = {
 			isa = PBXGroup;
 			children = (
+				CB822F031C79AE87007BA443 /* Model */,
 				CB0790031C6F2B49004A6CF0 /* AppDelegate.h */,
 				CB0790041C6F2B49004A6CF0 /* AppDelegate.m */,
 				CB0790061C6F2B49004A6CF0 /* ViewController.h */,
 				CB0790071C6F2B49004A6CF0 /* ViewController.m */,
-				CB0790091C6F2B49004A6CF0 /* Main.storyboard */,
 				CB07900C1C6F2B49004A6CF0 /* Assets.xcassets */,
 				CB07900E1C6F2B49004A6CF0 /* LaunchScreen.storyboard */,
 				CB0790111C6F2B49004A6CF0 /* Info.plist */,
 				CB0790001C6F2B49004A6CF0 /* Supporting Files */,
+				CB0790331C6F2C08004A6CF0 /* FirstTabViewController.h */,
+				CB0790341C6F2C08004A6CF0 /* FirstTabViewController.m */,
+				CB0790361C6F2C21004A6CF0 /* SecondTabViewController.h */,
+				CB0790371C6F2C21004A6CF0 /* SecondTabViewController.m */,
+				CB0790391C6F2C2D004A6CF0 /* ThirdViewController.h */,
+				CB07903A1C6F2C2D004A6CF0 /* ThirdViewController.m */,
+				CB07903F1C6F2C88004A6CF0 /* FourthViewController.h */,
+				CB0790401C6F2C88004A6CF0 /* FourthViewController.m */,
+				CB0790421C6F63B3004A6CF0 /* FirstTabFirstViewController.h */,
+				CB0790431C6F63B3004A6CF0 /* FirstTabFirstViewController.m */,
+				CB0790451C6F6506004A6CF0 /* FirstTabSecondViewController.h */,
+				CB0790461C6F6506004A6CF0 /* FirstTabSecondViewController.m */,
 			);
 			path = "iOS项目学习";
 			sourceTree = "<group>";
@@ -138,6 +172,17 @@
 				CB0790271C6F2B49004A6CF0 /* Info.plist */,
 			);
 			path = "iOS项目学习UITests";
+			sourceTree = "<group>";
+		};
+		CB822F031C79AE87007BA443 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB822F041C79AEB4007BA443 /* Person.h */,
+				CB822F051C79AEB4007BA443 /* Person.m */,
+				CB586C611C85E7680072737B /* Author.h */,
+				CB586C621C85E7680072737B /* Author.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +290,6 @@
 			files = (
 				CB0790101C6F2B49004A6CF0 /* LaunchScreen.storyboard in Resources */,
 				CB07900D1C6F2B49004A6CF0 /* Assets.xcassets in Resources */,
-				CB07900B1C6F2B49004A6CF0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +314,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0790471C6F6506004A6CF0 /* FirstTabSecondViewController.m in Sources */,
+				CB0790381C6F2C21004A6CF0 /* SecondTabViewController.m in Sources */,
+				CB822F061C79AEB4007BA443 /* Person.m in Sources */,
 				CB0790081C6F2B49004A6CF0 /* ViewController.m in Sources */,
+				CB07903B1C6F2C2D004A6CF0 /* ThirdViewController.m in Sources */,
+				CB0790351C6F2C08004A6CF0 /* FirstTabViewController.m in Sources */,
+				CB586C631C85E7680072737B /* Author.m in Sources */,
 				CB0790051C6F2B49004A6CF0 /* AppDelegate.m in Sources */,
+				CB0790411C6F2C88004A6CF0 /* FourthViewController.m in Sources */,
+				CB0790441C6F63B3004A6CF0 /* FirstTabFirstViewController.m in Sources */,
 				CB0790021C6F2B49004A6CF0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,14 +360,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CB0790091C6F2B49004A6CF0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB07900A1C6F2B49004A6CF0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CB07900E1C6F2B49004A6CF0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -498,6 +542,7 @@
 				CB07902C1C6F2B49004A6CF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB07902D1C6F2B49004A6CF0 /* Build configuration list for PBXNativeTarget "iOS项目学习Tests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +551,7 @@
 				CB07902F1C6F2B49004A6CF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB0790301C6F2B49004A6CF0 /* Build configuration list for PBXNativeTarget "iOS项目学习UITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +560,7 @@
 				CB0790321C6F2B49004A6CF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

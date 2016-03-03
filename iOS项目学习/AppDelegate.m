@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstTabViewController.h"
+#import "SecondTabViewController.h"
+#import "ThirdViewController.h"
+#import "FourthViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +21,56 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    FirstTabViewController *firstTabVC = [[FirstTabViewController alloc] init];
+    firstTabVC.navigationItem.title = @"第一个tab标题";
+    UINavigationController *firstNav = [[UINavigationController alloc] initWithRootViewController:firstTabVC];
+    firstNav.tabBarItem.title = @"第一个tab";
+    firstNav.tabBarItem.image = [UIImage imageNamed:@"tab_home"];
+    UIImage *imageHomeSelected = [UIImage imageNamed:@"tab_home_press"];
+    imageHomeSelected = [imageHomeSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    firstNav.tabBarItem.selectedImage = imageHomeSelected;
+    
+    
+    SecondTabViewController *secondTabVC = [[SecondTabViewController alloc] init];
+    secondTabVC.navigationItem.title = @"第二个tab标题";
+    UINavigationController *secondNav = [[UINavigationController alloc] initWithRootViewController:secondTabVC];
+    secondNav.tabBarItem.title = @"第二个tab";
+    secondNav.tabBarItem.image = [UIImage imageNamed:@"tab_goods"];
+    UIImage *imgGoodsSelected = [UIImage imageNamed:@"tab_goods_press"];
+    imgGoodsSelected = [imgGoodsSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    secondNav.tabBarItem.selectedImage = imgGoodsSelected;
+    
+    
+    ThirdViewController *thirdTabVC = [[ThirdViewController alloc] init];
+    thirdTabVC.navigationItem.title = @"第三个tab标题";
+    UINavigationController *thirdNav = [[UINavigationController alloc] initWithRootViewController:thirdTabVC];
+    thirdNav.tabBarItem.title = @"第三个tab";
+    thirdNav.tabBarItem.image = [UIImage imageNamed:@"tab_shops"];
+    UIImage *imgShopSelected = [UIImage imageNamed:@"tab_shops_press"];
+    imgShopSelected = [imgShopSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    thirdNav.tabBarItem.selectedImage = imgShopSelected;
+    
+    
+    FourthViewController *fourthTabVC = [[FourthViewController alloc] init];
+    fourthTabVC.navigationItem.title = @"第四个tab标题";
+    UINavigationController *fourthNav = [[UINavigationController alloc] initWithRootViewController:fourthTabVC];
+    fourthNav.tabBarItem.title = @"第四个tab";
+    fourthNav.tabBarItem.image = [UIImage imageNamed:@"tab_me"];
+    UIImage *imgMeSelected = [UIImage imageNamed:@"tab_me_press"];
+    imgMeSelected = [imgMeSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    fourthNav.tabBarItem.selectedImage = imgMeSelected;
+    
+    
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = @[firstNav,secondNav,thirdNav,fourthNav];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor redColor],NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = tabVC;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
