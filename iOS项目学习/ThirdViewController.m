@@ -80,6 +80,7 @@
     //解析数据
     NSString *stringData = [[NSString alloc] initWithData:serverData encoding:NSUTF8StringEncoding];
     NSLog(@"stringData:%@",stringData);
+    serverData = [NSMutableData data];//释放数据
 }
 
 
